@@ -1,0 +1,103 @@
+/**
+ * style.css - 元素样式
+ */
+
+/* body样式 */
+body {
+	/* 禁用双击缩放 */
+	touch-action: manipulation;
+	font-family: Courier New, Courier, monospace;
+	text-align: center;
+	/* 背景与文字颜色 */
+	background-color: #f4f4f8;
+	color: #333;
+	margin: 0;
+	padding: 0;
+}
+
+/* 切换城市按钮样式 */
+#switch-city-div {
+	/* 点击变暗动画 */
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	/* 固定右上角显示 */
+	position: absolute;
+	top: 2vh;
+	right: 15vw;
+	/* 确保不与siwtch-view-div重叠 */
+	margin-right: 28px;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 18px;
+	color: #888;
+	/* 默认隐藏 */
+	display: none;
+}
+#switch-city-div:hover {
+	/* 点击变暗颜色 */
+	background-color: #bbb;
+}
+
+/* 切换15日/24时按钮样式 */
+#switch-view-div {
+	/* 点击变暗动画 */
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	/* 固定右上角显示 */
+	position: absolute;
+	top: 2vh;
+	right: 11vw;
+	font-family: Courier New, Courier, monospace;
+	font-size: 18px;
+	color: #888;
+	/* 默认隐藏 */
+	display: none;
+}
+#switch-view-div:hover {
+	/* 点击变暗颜色 */
+	background-color: #bbb;
+}
+
+/* 当前天气信息各元素样式 */
+.weather-div {
+	padding: 20px;
+	margin-top: 20px;
+}
+.weather-div div {
+	margin: 10px 0;
+	font-size: 16px;
+}
+.div-center {
+	/* 子元素同行显示 */
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	width: 100%;
+}
+#city-div {
+	font-size: 22px;
+}
+#skycon-div {
+	font-size: 44px;
+	font-weight: bold;
+}
+#time-updated-div {
+	font-size: 14px;
+	color: #888;
+}
+
+/* 图表标题样式 */
+.div-heading {
+	/* 图表标题靠左显示 */
+	position: absolute;
+	left: 10vw;
+	font-size: 22px;
+	/* 默认隐藏 */
+	display: none;
+}
+
+/* 图表样式 */
+.div-chart {
+	width: 95vw;
+	height: 27vh;
+	margin: 20px auto;
+}

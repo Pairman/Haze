@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<title>Haze Analytics</title>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="#">
+		<meta name="viewport" content="width=device-width, initial-scale=0.9">
+		<!-- 元素样式 -->
+		<link rel="stylesheet" href="static/style.css">
+		<!-- 引入echarts.js -->
+		<script src="https://cdn.jsdelivr.net/npm/echarts@5"></script>
+		<!-- 引入其他js -->
+		<script src="static/global.js"></script>
+		<script src="static/util.js"></script>
+		<script src="static/location.js"></script>
+		<script src="static/weather.js"></script>
+		<script src="static/chart-skycon.js"></script>
+		<script src="static/chart-temperature.js"></script>
+		<script src="static/chart-precipitation.js"></script>
+		<script src="static/chart-humidity.js"></script>
+		<script src="static/chart-airquality.js"></script>
+		<script src="static/chart-aqicomponents.js"></script>
+	</head>
+
+	<body>
+		<!-- 切换城市按钮 -->
+		<div id="switch-city-div" onclick="switch_city().then(() => onclick_cooldown(this.id))">[ @ ]</div>
+
+		<!-- 切换15日/24时视图按钮 -->
+		<div id="switch-view-div" onclick="switch_view().then(() => onclick_cooldown(this.id))"></div>
+
+		<!-- 当前信息 (城市、天气、描述、温度、湿度、AQI、更新时间) -->
+		<div class="weather-div">
+			<div id="city-div">——</div>
+			<div id="skycon-div">——</div>
+			<div id="description-div">——</div>
+			<div class="div-center">
+				<div id="temperature-div">温度 --°C</div>
+				&emsp;
+				<div id="humidity-div">湿度 --%</div>
+				&emsp;
+				<div id="airquality-div">AQI -- ——</div>
+			</div>
+			<div id="time-updated-div">最后更新: --:--:--</div>
+		</div>
+
+		<!-- 天气状况，标题与图表容器 -->
+		<div class="div-heading">天气状况</div>
+		<br>
+		<div id="chart-skycon-div" class="div-chart"></div>
+
+		<!-- 温度，标题与图表容器 -->
+		<div class="div-heading">温度</div>
+		<br>
+		<div id="chart-temperature-div" class="div-chart"></div>
+
+		<!-- 湿度，标题与图表容器 -->
+		<div class="div-heading">湿度</div>
+		<br>
+		<div id="chart-humidity-div" class="div-chart"></div>
+
+		<!-- 降水概率，标题与图表容器 -->
+		<div class="div-heading">降水概率</div>
+		<br>
+		<div id="chart-precipitation-div" class="div-chart"></div>
+
+		<!-- AQI，标题与图表容器 -->
+		<div class="div-heading">AQI</div>
+		<br>
+		<div id="chart-airquality-div" class="div-chart"></div>
+
+		<!-- AQI组分，标题与图表容器 -->
+		<div class="div-heading">AQI组分</div>
+		<br>
+		<div id="chart-aqicomponents-div" class="div-chart"></div>
+
+		<!-- 底栏，版本与版权信息 -->
+		<div id="footer-div" class="div-center">
+			<a id="footer-link-a" href="https://github.com/Pairman">Haze Analytics</a>
+			&emsp;(C) 2024 Pairman
+		</div>
+
+		<!-- 执行主要逻辑 -->
+		<script src="static/main.js"></script>
+	</body>
+</html>

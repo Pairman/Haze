@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Haze"
+version = "0.2.1"
+authors = [
+	{name = "Pairman", email = "pairmanxlr@gmail.com"}
+]
+readme = "README.md"
+description = "View haze analytics for your city in a blink."
+license = {text = "GNU General Public License v3 (GPLv3)"}
+keywords = ["xdu", "xidian", "haze", "weather"]
+classifiers = [
+	"Framework :: Flask",
+	"Programming Language :: Python :: 3",
+	"Programming Language :: JavaScript",
+	"License :: OSI Approved :: GNU General Public License (GPL)",
+]
+requires-python = ">=3.8"
+dependencies = [
+	"flask",
+	"requests",
+	"requests-cache",
+	"waitress"
+]
+
+[project.urls]
+Homepage = "https://github.com/Pairman"
+
+[project.scripts]
+haze = "haze.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = [
+	"haze*",
+	"haze.*"
+]
+
+[tool.setuptools.package-data]
+"haze" = ["static/*", "templates/*"]
