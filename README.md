@@ -1,3 +1,3 @@
 # Haze
 
-The Frontend for Haze Detection System.
+Frontend for the Haze Detection System.
